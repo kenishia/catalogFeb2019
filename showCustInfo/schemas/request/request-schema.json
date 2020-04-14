@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "CUSTID": {
+      "type": "integer",
+      "multipleOf": 1,
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "description": "Nullable INTEGER"
+    }
+  },
+  "required": [
+    "CUSTID"
+  ],
+  "description": "Service showCustomerInfo invocation HTTP request body"
+}

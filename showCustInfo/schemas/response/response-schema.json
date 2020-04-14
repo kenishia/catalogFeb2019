@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "ResultSet Output": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "FIRSTNAME": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Nullable VARCHAR(30)"
+          },
+          "LASTNAME": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Nullable VARCHAR(30)"
+          },
+          "EMAIL": {
+            "type": "string",
+            "maxLength": 40,
+            "description": "Nullable VARCHAR(40)"
+          }
+        },
+        "required": [
+          "FIRSTNAME",
+          "LASTNAME",
+          "EMAIL"
+        ],
+        "description": "ResultSet Row"
+      }
+    },
+    "StatusDescription": {
+      "type": "string",
+      "description": "Service invocation status description"
+    },
+    "StatusCode": {
+      "type": "integer",
+      "multipleOf": 1,
+      "minimum": 100,
+      "maximum": 600,
+      "description": "Service invocation HTTP status code"
+    }
+  },
+  "required": [
+    "StatusDescription",
+    "StatusCode",
+    "ResultSet Output"
+  ],
+  "description": "Service showCustomerInfo invocation HTTP response body"
+}
